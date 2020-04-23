@@ -2,7 +2,8 @@
 import os,pickle
 import numpy as np
 
-dRoot = os.path.abspath(os.path.dirname(__file__))
+dRoot = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 CIFAR_DIR = os.path.join(dRoot,'cifar-10-batches-py')
 def load_data(filename):
     """read data from data file."""
@@ -22,8 +23,8 @@ class CifarData:
         self._data = np.vstack(all_data)
         self._data = self._data
         self._labels = np.hstack(all_labels)
-        print(self._data.shape)
-        print(self._labels.shape)
+        # print(self._data.shape)
+        # print(self._labels.shape)
         
         self._num_examples = self._data.shape[0]
         self._need_shuffle = need_shuffle
